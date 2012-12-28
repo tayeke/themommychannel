@@ -9,9 +9,10 @@
 #
 GMAIL_USERNAME: Your_Username
 GMAIL_PASSWORD: Your_Password
-ADMIN_NAME: First User
-ADMIN_EMAIL: user@example.com
-ADMIN_PASSWORD: please
-OMNIAUTH_PROVIDER_KEY: Your_OmniAuth_Provider_Key
-OMNIAUTH_PROVIDER_SECRET: Your_OmniAuth_Provider_Secret
-ROLES: [admin, user, VIP]
+G_KEY: Your_OmniAuth_Provider_Key
+G_SECRET: Your_OmniAuth_Provider_Secret
+TW_KEY: Your_OmniAuth_Provider_Key
+TW_SECRET: Your_OmniAuth_Provider_Secret
+FB_KEY: Your_OmniAuth_Provider_Key
+FB_SECRET: Your_OmniAuth_Provider_Secret
+ROLES: [user]
