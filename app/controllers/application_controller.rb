@@ -7,15 +7,16 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def correct_user?
-    @user = User.find(params[:id])
-    unless current_user == @user
-      redirect_to root_url, :alert => "Access denied."
-    end
-  end
-
   def set_locale
     I18n.locale = :en
+  end
+
+  def authenticate_admin!
+    if !current_user
+      redirect_to new_user_session_path
+    elsif !current_user.has_role?(:admin)
+      redirect_to root_url, :alert => "Access denied."
+    end
   end
 
   rescue_from CanCan::AccessDenied do |exception|

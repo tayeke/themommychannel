@@ -50,5 +50,9 @@ Mommychannel::Application.configure do
   config.assets.compress = false
 
   # Expands the lines which load the assets
-  config.assets.debug = true
+  #####
+  # I set this to false because asset logging was becoming too much
+  #####
+  config.assets.debug = false
+
 end

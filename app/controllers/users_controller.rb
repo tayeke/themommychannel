@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-    def edit
+  def edit
     @user = User.find(params[:id])
   end
   
@@ -20,8 +20,17 @@ class UsersController < ApplicationController
   end
 
 
-def show
+  def show
     @user = User.find(params[:id])
+  end
+
+  private
+
+  def correct_user?
+    @user = User.find(params[:id])
+    unless current_user == @user
+      redirect_to root_url, :alert => "Access denied."
+    end
   end
 
 end
