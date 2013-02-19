@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @users = User.all
+    @categories = Magnify::Category.new(ENV['MAGNIFY_TOKEN']).all
   end
 end

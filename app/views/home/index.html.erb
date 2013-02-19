@@ -1,4 +1,6 @@
 <h3><%=t :hello_world %></h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+<nav id="categories">
+<% @categories.each do |cat| %>
+  <%= link_to cat['content']['content'], category_path(cat['magnify:id']['content']) %>
 <% end %>
+</nav>

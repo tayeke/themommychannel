@@ -1,4 +1,8 @@
 Mommychannel::Application.routes.draw do
+  
+  get "category/:id", to: "video#category", as: :category
+  get "video/:id", to: "video#show", as: :video
+
   ActiveAdmin.routes(self)
   root to: "home#index"
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},

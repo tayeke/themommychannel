@@ -1,0 +1,7 @@
+<%= content_tag :h2, @category[:info]['content']['content'] %>
+<% @category[:videos].each do |video| %>
+  <a href="<%= video_path(video['magnify:id']['content']) %>">
+    <%= image_tag video['media:thumbnail']['url'] %>
+    <%= content_tag :h5, video['title']['content'] %>
+  </a>
+<% end %>
