@@ -24,7 +24,6 @@ class Magnify::Category
     url = "#{@base_url}/list/show?id=#{_id}&key=#{@token}&format=json"
     resp = Net::HTTP.get_response(URI.parse(url))
     videos = JSON.parse(resp.body)
-    videos.each{|v| ap v}
     {info: info['entry'][0], videos: videos['entry']}
   end
 
